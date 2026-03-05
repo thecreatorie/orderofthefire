@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order of the Fire Entertainment | Austin, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root{--black:#070707;--s1:#0f0f0f;--s2:#161616;--s3:#1e1e1e;--ember:#8B1A00;--fire:#D94000;--flame:#FF5C00;--spark:#FF9A00;--gold:#FFD000;--cream:#F2EBD9;--muted:#7a6a58;--border:rgba(255,92,0,0.15);--glow:rgba(255,92,0,0.4)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--black);color:var(--cream);font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;line-height:1.7;overflow-x:hidden}
+    ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--fire);border-radius:3px}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.025;pointer-events:none;z-index:1}
+    #pc{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.45}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:background .4s,padding .3s}
+    nav.scrolled{background:rgba(7,7,7,.96);backdrop-filter:blur(12px);padding:.8rem 3rem;border-bottom:1px solid var(--border)}
+    .nl{display:flex;flex-direction:column;line-height:1}
+    .nl .or{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.35em;text-transform:uppercase;color:var(--muted);font-weight:600}
+    .nl .fn{font-family:'Cinzel Decorative',serif;font-size:1.1rem;font-weight:700;background:linear-gradient(135deg,var(--flame),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .nlinks{display:flex;gap:2.2rem;list-style:none;align-items:center}
+    .nlinks a{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .3s;font-weight:600}
+    .nlinks a:hover{color:var(--spark)}
+    .ncta{padding:.6rem 1.5rem!important;border:1px solid var(--flame);color:var(--flame)!important;border-radius:2px;transition:background .3s,color .3s!important}
+    .ncta:hover{background:var(--flame)!important;color:var(--black)!important}
+    .hb{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .hb span{display:block;width:26px;height:2px;background:var(--cream)}
+    .mm{display:none;position:fixed;inset:0;background:rgba(7,7,7,.98);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+    .mm.open{display:flex}
+    .mm a{font-family:'Cinzel Decorative',serif;font-size:1.4rem;color:var(--cream);text-decoration:none;transition:color .3s}
+    .mm a:hover{color:var(--spark)}
+    .mc{position:absolute;top:1.5rem;right:2rem;font-size:2rem;color:var(--muted);cursor:pointer;background:none;border:none}
+
+    #hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+    .hbg{position:absolute;inset:0;z-index:1;background:url('images/1000009875.jpg') center 25%/cover no-repeat}
+    .hbg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(7,7,7,.55) 0%,rgba(7,7,7,.25) 30%,rgba(7,7,7,.6) 70%,rgba(7,7,7,1) 100%)}
+    .ff{position:absolute;inset:0;background:radial-gradient(ellipse 60% 35% at 50% 100%,rgba(255,80,0,.18) 0%,transparent 65%);animation:flicker 3s ease-in-out infinite alternate}
+    @keyframes flicker{0%{opacity:.5;transform:scaleX(1)}50%{opacity:1;transform:scaleX(1.06)}100%{opacity:.7;transform:scaleX(.97)}}
+    .hc{position:relative;z-index:3;padding:2rem;max-width:900px}
+    .hey{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.5em;text-transform:uppercase;color:var(--spark);margin-bottom:1.5rem;opacity:0;transform:translateY(20px);animation:fu .8s ease .3s forwards}
+    .htitle{font-family:'Cinzel Decorative',serif;font-size:clamp(2.8rem,7vw,6rem);font-weight:900;line-height:1.05;margin-bottom:1.2rem;opacity:0;transform:translateY(30px);animation:fu 1s ease .5s forwards}
+    .htitle .l1{display:block;color:var(--cream)}
+    .htitle .l2{display:block;background:linear-gradient(90deg,var(--fire),var(--spark),var(--gold),var(--spark),var(--fire));background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fs 4s ease-in-out infinite 1.5s}
+    @keyframes fs{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+    .hsub{font-size:clamp(1rem,2.2vw,1.35rem);font-weight:300;font-style:italic;color:rgba(242,235,217,.8);margin-bottom:2.5rem;opacity:0;transform:translateY(20px);animation:fu .8s ease .8s forwards}
+    .ha{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fu .8s ease 1s forwards}
+    @keyframes fu{to{opacity:1;transform:translateY(0)}}
+    .bp{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;padding:1rem 2.4rem;background:linear-gradient(135deg,var(--fire),var(--ember));color:var(--cream);border:none;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;position:relative;overflow:hidden;transition:transform .2s,box-shadow .3s;box-shadow:0 4px 30px rgba(217,64,0,.45)}
+    .bp::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--flame),var(--spark));opacity:0;transition:opacity .3s}
+    .bp:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(255,92,0,.6)}
+    .bp:hover::before{opacity:1}
+    .bp span{position:relative;z-index:1}
+    .bo{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;padding:1rem 2.4rem;background:transparent;color:var(--cream);border:1px solid rgba(242,235,217,.35);border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:border-color .3s,color .3s}
+    .bo:hover{border-color:var(--spark);color:var(--spark)}
+    .hscroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:.5rem}
+    .hscroll span{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--muted)}
+    .sl{width:1px;height:50px;background:linear-gradient(to bottom,var(--flame),transparent);animation:sp 2s ease-in-out infinite}
+    @keyframes sp{0%,100%{opacity:.3}50%{opacity:1}}
+
+    section{position:relative;z-index:2}
+    .si{max-width:1200px;margin:0 auto;padding:0 2rem}
+    .slbl{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.45em;text-transform:uppercase;color:var(--flame);margin-bottom:.8rem;font-weight:600}
+    .stitle{font-family:'Cinzel Decorative',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;line-height:1.15;color:var(--cream)}
+    .stitle em{font-style:normal;background:linear-gradient(90deg,var(--flame),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .dv{width:60px;height:2px;background:linear-gradient(90deg,var(--fire),var(--gold));margin:1.5rem 0 2rem}
+    .dvc{margin-left:auto;margin-right:auto}
+    .fd{width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--ember),var(--flame),var(--spark),var(--gold),var(--spark),var(--flame),var(--ember),transparent)}
+    .rv{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+    .rv.vis{opacity:1;transform:translateY(0)}
+
+    #brand{padding:6rem 0;background:linear-gradient(180deg,var(--black) 0%,var(--s1) 100%)}
+    .bg{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .bt p{font-size:1.08rem;color:rgba(242,235,217,.75);margin-bottom:1.2rem;font-weight:300}
+    .bv{position:relative;height:460px;border-radius:4px;overflow:hidden}
+    .bv img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:saturate(1.15) contrast(1.05)}
+    .bvb{position:absolute;inset:12px;border:1px solid rgba(255,92,0,.3);border-radius:3px;pointer-events:none;z-index:1}
+
+    #fire-arts{padding:6rem 0 5rem;background:var(--black)}
+    .fah{text-align:center;max-width:700px;margin:0 auto 5rem}
+    .fah p{font-size:1.05rem;color:rgba(242,235,217,.65);font-style:italic}
+    .fo{margin-bottom:5.5rem}
+    .fo:last-child{margin-bottom:0}
+    .fom{display:flex;align-items:flex-end;gap:2rem;margin-bottom:1rem;flex-wrap:wrap;justify-content:space-between}
+    .fotitle{font-family:'Cinzel Decorative',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:var(--cream)}
+    .fotitle em{font-style:normal;background:linear-gradient(90deg,var(--flame),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .ftag{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--spark);border:1px solid rgba(255,154,0,.3);padding:.28rem .8rem;border-radius:2px;white-space:nowrap;flex-shrink:0}
+    .fodesc{font-size:1rem;color:rgba(242,235,217,.62);font-style:italic;max-width:680px;margin-bottom:1.5rem}
+    .ps{display:flex;gap:10px;overflow-x:auto;overflow-y:hidden;height:400px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(217,64,0,.5) transparent;padding-bottom:4px;border-radius:4px}
+    .ps::-webkit-scrollbar{height:3px}
+    .ps::-webkit-scrollbar-track{background:transparent}
+    .ps::-webkit-scrollbar-thumb{background:var(--fire);border-radius:3px}
+    .pi{flex:0 0 auto;height:100%;scroll-snap-align:start;position:relative;overflow:hidden;border-radius:3px;cursor:pointer}
+    .pi.p{width:270px}.pi.l{width:420px}
+    .pi img{height:100%;width:100%;object-fit:cover;transition:transform .5s,filter .4s;filter:brightness(.85) saturate(1.1)}
+    .pi:hover img{transform:scale(1.05);filter:brightness(1) saturate(1.3)}
+    .pi::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(150,30,0,.6) 0%,transparent 45%);opacity:0;transition:opacity .4s}
+    .pi:hover::after{opacity:1}
+    .sn{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:.8rem;display:flex;align-items:center;gap:.5rem}
+    .sn::before{content:'';display:inline-block;width:28px;height:1px;background:var(--muted)}
+
+    #services{padding:6rem 0;background:var(--s1)}
+    .svch{text-align:center;max-width:600px;margin:0 auto 3.5rem}
+    .svch p{font-size:1.05rem;color:rgba(242,235,217,.65);font-style:italic}
+    .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+    .svc{background:var(--s2);overflow:hidden;position:relative;transition:background .3s}
+    .svc:hover{background:var(--s3)}
+    .simg{width:100%;height:210px;object-fit:cover;filter:brightness(.82) saturate(1.1);transition:filter .4s,transform .5s;display:block}
+    .svc:hover .simg{filter:brightness(.95) saturate(1.3);transform:scale(1.03)}
+    .sbdy{padding:1.6rem 1.8rem 2rem}
+    .snm{font-family:'Cinzel',serif;font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);margin-bottom:.5rem}
+    .sdc{font-size:.92rem;color:var(--muted);line-height:1.6}
+    .sgl{position:absolute;bottom:-40px;right:-40px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,0,.1),transparent 70%);transition:transform .4s;pointer-events:none}
+    .svc:hover .sgl{transform:scale(1.6)}
+
+    #gallery{padding:6rem 0;background:var(--black)}
+    .ghd{margin-bottom:2rem}
+    .gstrip{display:flex;gap:8px;overflow-x:auto;overflow-y:hidden;height:520px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(217,64,0,.5) transparent}
+    .gstrip::-webkit-scrollbar{height:4px}
+    .gstrip::-webkit-scrollbar-track{background:var(--s1)}
+    .gstrip::-webkit-scrollbar-thumb{background:var(--fire);border-radius:3px}
+    .gi{flex:0 0 auto;height:100%;scroll-snap-align:start;position:relative;overflow:hidden;border-radius:3px;cursor:pointer}
+    .gi.p{width:330px}.gi.l{width:500px}.gi.s{width:410px}
+    .gi img{height:100%;width:100%;object-fit:cover;transition:transform .5s,filter .4s;filter:brightness(.82) saturate(1.05)}
+    .gi:hover img{transform:scale(1.04);filter:brightness(.98) saturate(1.28)}
+    .gi::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(120,25,0,.65) 0%,transparent 42%);opacity:0;transition:opacity .4s}
+    .gi:hover::after{opacity:1}
+    .gc{position:absolute;bottom:0;left:0;right:0;padding:1rem 1.2rem .9rem;font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);z-index:1;transform:translateY(8px);opacity:0;transition:all .3s}
+    .gi:hover .gc{transform:translateY(0);opacity:1}
+
+    .lb{display:none;position:fixed;inset:0;background:rgba(7,7,7,.96);z-index:2000;align-items:center;justify-content:center}
+    .lb.open{display:flex}
+    .lb img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:3px}
+    .lbx{position:absolute;top:1.5rem;right:2rem;font-size:2.5rem;color:var(--muted);cursor:pointer;background:none;border:none;line-height:1;transition:color .2s}
+    .lbx:hover{color:var(--flame)}
+
+    #video-showcase{padding:6rem 0;background:var(--s1)}
+    .vhd{text-align:center;max-width:600px;margin:0 auto 3rem}
+    .vhd p{font-size:1.05rem;color:rgba(242,235,217,.65);font-style:italic}
+    .vwrap{position:relative;width:100%;padding-top:56.25%;border-radius:4px;overflow:hidden;border:1px solid var(--border);box-shadow:0 0 60px rgba(180,40,0,.3)}
+    .vwrap iframe{position:absolute;inset:0;width:100%;height:100%}
+    .vph{position:absolute;inset:0;background:var(--s2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+    .pli{width:80px;height:80px;border:2px solid var(--flame);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--flame);cursor:pointer;transition:all .3s;background:rgba(217,64,0,.1)}
+    .pli:hover{background:var(--flame);color:var(--black);box-shadow:0 0 40px var(--glow)}
+    .vph p{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+
+
+    .thd{text-align:center;margin-bottom:3.5rem}
+    .sct{overflow-x:auto;padding-bottom:1rem;scrollbar-width:thin;scrollbar-color:var(--fire) transparent}
+    .tt{display:flex;gap:1.5rem}
+    .tc{flex:0 0 360px;background:var(--s2);border:1px solid var(--border);border-radius:4px;padding:2.5rem;position:relative}
+    .tc::before{content:'\201C';position:absolute;top:-.5rem;left:1.5rem;font-family:'Cinzel Decorative',serif;font-size:5rem;color:var(--ember);line-height:1;opacity:.5}
+    .tst{color:var(--gold);font-size:.9rem;margin-bottom:1rem;letter-spacing:3px}
+    .ttx{font-size:1rem;font-style:italic;color:rgba(242,235,217,.8);line-height:1.7;margin-bottom:1.5rem;position:relative;z-index:1}
+    .tnm{font-family:'Cinzel',serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;color:var(--spark)}
+    .trl{font-size:.85rem;color:var(--muted)}
+
+    #contact{padding:6rem 0 8rem;background:var(--s1)}
+    .cgrid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start}
+    .ci p{font-size:1.05rem;color:rgba(242,235,217,.7);margin-bottom:2rem}
+    .cd{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem}
+    .cic{font-size:1.2rem;width:40px;flex-shrink:0;filter:drop-shadow(0 0 5px var(--flame))}
+    .ctx strong{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--flame);display:block;margin-bottom:.2rem}
+    .ctx span{font-size:1rem;color:var(--cream)}
+    .cf{background:var(--s2);border:1px solid var(--border);border-radius:4px;padding:2.5rem}
+    .ftl{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--flame);margin-bottom:1.8rem;font-weight:600}
+    .fr{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+    .fg{display:flex;flex-direction:column;margin-bottom:1rem}
+    .fg label{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;font-weight:600}
+    .fg input,.fg select,.fg textarea{background:var(--s3);border:1px solid rgba(255,92,0,.2);border-radius:2px;padding:.85rem 1rem;color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:1rem;outline:none;transition:border-color .3s,box-shadow .3s;width:100%;-webkit-appearance:none}
+    .fg select option{background:var(--s3);color:var(--cream)}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--flame);box-shadow:0 0 0 3px rgba(255,92,0,.12)}
+    .fg textarea{resize:vertical;min-height:120px}
+    .fg input::placeholder,.fg textarea::placeholder{color:var(--muted);opacity:.7}
+    .fsub{width:100%;padding:1rem;background:linear-gradient(135deg,var(--fire),var(--ember));border:none;border-radius:2px;color:var(--cream);font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;cursor:pointer;transition:all .3s;margin-top:.5rem;box-shadow:0 4px 25px rgba(180,40,0,.35)}
+    .fsub:hover{background:linear-gradient(135deg,var(--flame),var(--fire));box-shadow:0 6px 35px rgba(255,92,0,.5);transform:translateY(-1px)}
+    .fn2{font-size:.8rem;color:var(--muted);text-align:center;margin-top:1rem;font-style:italic}
+    .fsucc{display:none;text-align:center;padding:2rem}
+    .fsucc .si{font-size:3rem;margin-bottom:1rem}
+    .fsucc h3{font-family:'Cinzel Decorative',serif;color:var(--spark);margin-bottom:.5rem}
+    .fsucc p{color:var(--muted)}
+
+    footer{background:var(--black);border-top:1px solid var(--border);padding:3rem 0 2rem;position:relative;z-index:2}
+    .fi{max-width:1200px;margin:0 auto;padding:0 2rem}
+    .ft{display:flex;justify-content:space-between;align-items:flex-start;gap:3rem;margin-bottom:2.5rem;flex-wrap:wrap}
+    .flog .ffn{font-family:'Cinzel Decorative',serif;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,var(--flame),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .flog p{font-size:.85rem;color:var(--muted);margin-top:.5rem}
+    .fls{display:flex;gap:4rem;flex-wrap:wrap}
+    .fc h4{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--flame);margin-bottom:1rem;font-weight:600}
+    .fc ul{list-style:none}
+    .fc ul li{margin-bottom:.5rem}
+    .fc ul li a{font-size:.9rem;color:var(--muted);text-decoration:none;transition:color .2s}
+    .fc ul li a:hover{color:var(--spark)}
+    .fb{display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem}
+    .fb p{font-size:.8rem;color:var(--muted)}
+    .fb a{color:var(--muted);text-decoration:none}
+    .fso{display:flex;gap:1rem}
+    .soln{width:36px;height:36px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--muted);text-decoration:none;transition:all .3s}
+    .soln:hover{border-color:var(--flame);color:var(--flame);box-shadow:0 0 15px rgba(255,92,0,.3)}
+
+    @media(max-width:1024px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:900px){
+      nav{padding:1rem 1.5rem}nav.scrolled{padding:.7rem 1.5rem}
+      .nlinks{display:none}.hb{display:flex}
+      .bg{grid-template-columns:1fr}.bv{height:300px}
+      .cgrid{grid-template-columns:1fr;gap:3rem}
+      .ft{flex-direction:column}
+      .ps{height:280px}.pi.l{width:340px}
+      .gstrip{height:360px}.gi.l{width:360px}.gi.p{width:240px}.gi.s{width:300px}
+    }
+    @media(max-width:600px){
+      .sgrid{grid-template-columns:1fr}.fr{grid-template-columns:1fr}
+      .ps{height:220px}.pi.p{width:200px}.pi.l{width:300px}
+      .gstrip{height:290px}
+    }
+  </style>
+</head>
+<body>
+  <canvas id="pc"></canvas>
+
+  <div class="mm" id="mm">
+    <button class="mc" onclick="cMM()">&#10005;</button>
+    <a href="#brand" onclick="cMM()">About</a>
+    <a href="#fire-arts" onclick="cMM()">Fire Arts</a>
+    <a href="#services" onclick="cMM()">All Services</a>
+    <a href="#gallery" onclick="cMM()">Gallery</a>
+    <a href="#video-showcase" onclick="cMM()">Videos</a>
+    <a href="#contact" onclick="cMM()">Book Now</a>
+  </div>
+
+  <nav id="mn">
+    <div class="nl"><span class="or">Order of the</span><span class="fn">Fire</span></div>
+    <ul class="nlinks">
+      <li><a href="#brand">About</a></li>
+      <li><a href="#fire-arts">Fire Arts</a></li>
+      <li><a href="#services">All Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#video-showcase">Videos</a></li>
+      <li><a href="#contact" class="ncta">Book Now</a></li>
+    </ul>
+    <button class="hb" onclick="oMM()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <section id="hero">
+    <div class="hbg"><div class="ff"></div></div>
+    <div class="hc">
+      <p class="hey">&#10022; Austin, Texas &#10022;</p>
+      <h1 class="htitle"><span class="l1">Order of the</span><span class="l2">Fire</span></h1>
+      <p class="hsub">Where spectacle becomes legend &mdash; fire artistry, aerial performance &amp; immersive entertainment for extraordinary events</p>
+      <div class="ha">
+        <a href="#contact" class="bp"><span>Book Your Event</span></a>
+        <a href="#fire-arts" class="bo">See Performances</a>
+      </div>
+    </div>
+    <div class="hscroll"><span>Scroll</span><div class="sl"></div></div>
+  </section>
+
+  <div class="fd"></div>
+
+  <section id="brand">
+    <div class="si">
+      <div class="bg">
+        <div class="bt rv">
+          <p class="slbl">&#10022; Our Story</p>
+          <h2 class="stitle">Born from the <em>Flame</em></h2>
+          <div class="dv"></div>
+          <p>Order of the Fire is Austin&#8217;s premier entertainment collective, bringing world-class fire performance, aerial artistry, and immersive spectacle to the events that demand the extraordinary.</p>
+          <p>From intimate private celebrations to massive corporate productions, we transform any venue into an unforgettable realm of living art. Every performance is custom-crafted, every moment choreographed to leave your guests breathless.</p>
+          <p>Based in Austin, Texas &mdash; performing across the nation.</p>
+        </div>
+        <div class="bv rv" style="transition-delay:.2s">
+          <img src="images/Revelry-Barr_346.jpg" alt="Lamp Lady performer at evening event" />
+          <div class="bvb"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="fd"></div>
+
+  <section id="fire-arts">
+    <div class="si">
+      <div class="fah rv">
+        <p class="slbl">&#10022; The Heart of What We Do</p>
+        <h2 class="stitle">The <em>Fire Arts</em></h2>
+        <div class="dv dvc"></div>
+        <p>Three distinct disciplines, each a mastery of its own &mdash; from spinning fire staffs to breathing living columns of flame. Every act is choreographed. Every moment intentional.</p>
+      </div>
+
+      <div class="fo rv">
+        <div class="fom">
+          <h3 class="fotitle"><em>Fire Dancing</em></h3>
+          <span class="ftag">Poi &middot; Staff &middot; Fan &middot; Multi-Performer</span>
+        </div>
+        <p class="fodesc">Choreographed poi, staff, and multi-flame performances by artists who have dedicated their lives to the craft. Captivating from 10 feet or 100 &mdash; indoors or out.</p>
+        <div class="ps">
+          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_388.jpg" alt="Fire dancer with staff" loading="lazy" /></div>
+          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_389.jpg" alt="Female fire dancer" loading="lazy" /></div>
+          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_385.jpg" alt="Fire staff performance" loading="lazy" /></div>
+          <div class="pi l" onclick="oLB(this)"><img src="images/1000009875.jpg" alt="Fire dancer at ocean sunset" loading="lazy" /></div>
+        </div>
+        <p class="sn">Scroll to see more</p>
+      </div>
+
+      <div class="fo rv">
+        <div class="fom">
+          <h3 class="fotitle"><em>Fire Breathing</em></h3>
+          <span class="ftag">Outdoor Only &middot; Show-Stopping &middot; Signature Act</span>
+        </div>
+        <p class="fodesc">Towering columns of living flame launched from the performer&#8217;s own breath. A primal, awe-inspiring act performed exclusively outdoors &mdash; the moment that defines the night.</p>
+        <div class="ps">
+          <div class="pi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire breathing at ocean" loading="lazy" /></div>
+          <div class="pi p" onclick="oLB(this)"><img src="images/DSCF2496.jpg" alt="Fire breathing at sunset on rocks" loading="lazy" /></div>
+        </div>
+        <p class="sn">Scroll to see more</p>
+      </div>
+
+      <div class="fo rv">
+        <div class="fom">
+          <h3 class="fotitle"><em>Fire Eating</em></h3>
+          <span class="ftag">Close-Up &middot; Strolling &middot; Intimate</span>
+        </div>
+        <p class="fodesc">An intimate and utterly captivating act. The performer brings flame to their lips and extinguishes it within &mdash; leaving audiences in stunned, mesmerized silence. Perfect for close-up entertainment during cocktail hours.</p>
+        <div class="ps">
+          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_378.jpg" alt="Fire eating performer" loading="lazy" /></div>
+          <div class="pi l" onclick="oLB(this)"><img src="images/1000005830.jpg" alt="Smoke performance special effects" loading="lazy" /></div>
+        </div>
+        <p class="sn">Scroll to see more</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="fd"></div>
+
+  <section id="services">
+    <div class="si">
+      <div class="svch rv">
+        <p class="slbl">&#10022; Beyond the Fire</p>
+        <h2 class="stitle">All <em>Performances</em></h2>
+        <div class="dv dvc"></div>
+        <p>A full suite of immersive entertainment arts &mdash; from towering stilt walkers to luminous lamp ladies. We build your complete experience.</p>
+      </div>
+      <div class="sgrid rv" style="transition-delay:.1s">
+        <div class="svc">
+          <img src="images/e9caf784-3680-44bc-b897-8f906d5496f4-1_all_5613.jpg" alt="Stilt walker skeleton" class="simg" />
+          <div class="sbdy"><div class="snm">&#127918; Stilt Walkers</div><p class="sdc">Towering, costumed stilt performers that roam your event as living centerpieces &mdash; extraordinary for cocktail hours, arrivals, themed events, and Halloween events.</p></div>
+          <div class="sgl"></div>
+        </div>
+        <div class="svc">
+          <img src="images/1000014271.jpg" alt="Snake performer" class="simg" />
+          <div class="sbdy"><div class="snm">&#128013; Snake Performers</div><p class="sdc">Exotic snake charming performances that add an element of primal wonder and mystique. Unforgettable, conversation-starting, and wildly photogenic.</p></div>
+          <div class="sgl"></div>
+        </div>
+        <div class="svc">
+          <img src="images/Revelry-Barr_590.jpg" alt="Lamp Ladies" class="simg" />
+          <div class="sbdy"><div class="snm">&#129812; Lamp Ladies</div><p class="sdc">Our signature Burlesque-inspired Lamp Ladies &mdash; elegant, atmospheric performers who bring old-world glamour and surreal wonder to cocktail hours and upscale events.</p></div>
+          <div class="sgl"></div>
+        </div>
+        <div class="svc">
+          <img src="images/e9caf784-3680-44bc-b897-8f906d5496f4-1_all_5524.jpg" alt="Stilt walker at holiday event" class="simg" />
+          <div class="sbdy"><div class="snm">&#129442; Aerial Performances</div><p class="sdc">Breathtaking aerial silks, lyra, and acrobatic rigging acts. We also offer professional rig rentals and full rigging services for your production.</p></div>
+          <div class="sgl"></div>
+        </div>
+        <div class="svc">
+          <img src="images/1000006142_copy.jpg" alt="Stilt walker holiday festival" class="simg" />
+          <div class="sbdy"><div class="snm">&#128161; LED Light Shows</div><p class="sdc">High-energy LED performance art with illuminated props, body suits, and synchronized sequences &mdash; the perfect solution for indoor venues where fire isn&#8217;t permitted.</p></div>
+          <div class="sgl"></div>
+        </div>
+        <div class="svc">
+          <img src="images/1000005838.jpg" alt="Devil stilt walker" class="simg" />
+          <div class="sbdy"><div class="snm">&#10024; GoGo &amp; Custom Acts</div><p class="sdc">High-energy GoGo dancers plus bespoke acts tailored to your event concept, brand, or theme. Custom costuming, choreography, and concepts available.</p></div>
+          <div class="sgl"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="fd"></div>
+
+  <section id="gallery">
+    <div class="si">
+      <div class="ghd rv">
+        <p class="slbl">&#10022; The Spectacle</p>
+        <h2 class="stitle">Photo <em>Gallery</em></h2>
+        <div class="dv"></div>
+      </div>
+    </div>
+    <div style="padding:0 2rem" class="rv">
+      <div class="gstrip">
+        <div class="gi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire breathing ocean" loading="lazy" /><span class="gc">Fire Breathing</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_388.jpg" alt="Fire dancer" loading="lazy" /><span class="gc">Fire Dancing</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/DSCF2496.jpg" alt="Fire breathing sunset" loading="lazy" /><span class="gc">Fire Breathing</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_346.jpg" alt="Lamp Lady golden" loading="lazy" /><span class="gc">Lamp Lady</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_389.jpg" alt="Fire performer" loading="lazy" /><span class="gc">Fire Dancing</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/1000014271.jpg" alt="Snake performer" loading="lazy" /><span class="gc">Snake Performance</span></div>
+        <div class="gi l" onclick="oLB(this)"><img src="images/1000009875.jpg" alt="Fire staff ocean sunset" loading="lazy" /><span class="gc">Fire Staff</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/e9caf784-3680-44bc-b897-8f906d5496f4-1_all_5613.jpg" alt="Skeleton stilt walker" loading="lazy" /><span class="gc">Stilt Walker</span></div>
+        <div class="gi s" onclick="oLB(this)"><img src="images/Revelry-Barr_590.jpg" alt="Lamp Ladies party" loading="lazy" /><span class="gc">Lamp Ladies</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_385.jpg" alt="Fire staff performer" loading="lazy" /><span class="gc">Fire Staff</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/e9caf784-3680-44bc-b897-8f906d5496f4-1_all_5524.jpg" alt="Stilt walker holiday lights" loading="lazy" /><span class="gc">Stilt Walker</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_378.jpg" alt="Fire eating" loading="lazy" /><span class="gc">Fire Eating</span></div>
+        <div class="gi s" onclick="oLB(this)"><img src="images/1000005830.jpg" alt="Smoke performance" loading="lazy" /><span class="gc">Special Effects</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/1000005838.jpg" alt="Devil stilt walker" loading="lazy" /><span class="gc">Stilt Walker</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/1000006142_copy.jpg" alt="Holiday stilt walker" loading="lazy" /><span class="gc">Stilt Walker</span></div>
+      </div>
+      <p class="sn" style="margin-top:.8rem">Scroll to explore the full gallery</p>
+    </div>
+  </section>
+
+  <div class="lb" id="lb">
+    <button class="lbx" onclick="cLB()">&#10005;</button>
+    <img id="lbi" src="" alt="" />
+  </div>
+
+  <div class="fd"></div>
+
+  <section id="video-showcase">
+    <div class="si">
+      <div class="vhd rv">
+        <p class="slbl">&#10022; In Action</p>
+        <h2 class="stitle">Watch <em>The Fire</em></h2>
+        <div class="dv dvc"></div>
+        <p>Experience the spectacle before you book. Replace the placeholder below with your YouTube or Vimeo showreel link.</p>
+      </div>
+      <div class="vwrap rv" style="transition-delay:.2s">
+        <div class="vph" id="vph">
+          <div class="pli" onclick="lV()">&#9654;</div>
+          <p>Your Showreel &mdash; Click to Play</p>
+        </div>
+        <iframe id="vf" src="" style="display:none" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <div class="fd"></div>
+
+  <section id="contact">
+    <div class="si">
+      <div class="cgrid">
+        <div class="ci rv">
+          <p class="slbl">&#10022; Let&#8217;s Create Together</p>
+          <h2 class="stitle">Book Your <em>Event</em></h2>
+          <div class="dv"></div>
+          <p>Every extraordinary event begins with a conversation. Tell us about your vision and we&#8217;ll craft a performance experience that exceeds your expectations.</p>
+          <div class="cd"><div class="cic">&#128205;</div><div class="ctx"><strong>Location</strong><span>Austin, Texas &mdash; Available Nationwide</span></div></div>
+          <div class="cd"><div class="cic">&#128231;</div><div class="ctx"><strong>Email</strong><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3159545d5d5e715e435554435e57455954575843541f525e5c">[email&#160;protected]</a></span></div></div>
+          <div class="cd"><div class="cic">&#128241;</div><div class="ctx"><strong>Phone / Text</strong><span>(512) 000-0000</span></div></div>
+          <div class="cd"><div class="cic">&#8987;</div><div class="ctx"><strong>Response Time</strong><span>We respond within 24 hours</span></div></div>
+          <div class="cd"><div class="cic">&#127918;</div><div class="ctx"><strong>Ideal Events</strong><span>Corporate events &middot; Weddings &middot; Festivals &middot; Product launches &middot; Private parties &middot; Nightlife</span></div></div>
+        </div>
+        <div class="cf rv" style="transition-delay:.2s">
+          <p class="ftl">&#10022; Inquiry Form</p>
+          <form id="cForm" onsubmit="hSub(event)">
+            <div class="fr">
+              <div class="fg"><label>First Name</label><input type="text" name="firstName" placeholder="Jane" required /></div>
+              <div class="fg"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" required /></div>
+            </div>
+            <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="jane@company.com" required /></div>
+            <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="(512) 000-0000" /></div>
+            <div class="fr">
+              <div class="fg"><label>Event Type</label><select name="eventType" required><option value="" disabled selected>Select type</option><option>Corporate Event</option><option>Wedding</option><option>Private Celebration</option><option>Festival / Concert</option><option>Product Launch</option><option>Nightlife / Club</option><option>Other</option></select></div>
+              <div class="fg"><label>Event Date</label><input type="date" name="eventDate" /></div>
+            </div>
+            <div class="fg"><label>Services of Interest</label><select name="services"><option value="" disabled selected>Select performance</option><option>Fire Dancing</option><option>Fire Breathing</option><option>Fire Eating</option><option>Full Fire Show</option><option>Aerial Performance + Rig</option><option>Stilt Walkers</option><option>Snake Performers</option><option>LED Light Show</option><option>Lamp Ladies</option><option>GoGo Dancers</option><option>Multiple / Custom Package</option></select></div>
+            <div class="fg"><label>Tell Us About Your Event</label><textarea name="message" placeholder="Venue, guest count, vision, budget range... the more detail, the better we can serve you."></textarea></div>
+            <button type="submit" class="fsub">&#10022; Send Your Inquiry &#10022;</button>
+            <p class="fn2">We respond to all inquiries within 24 hours.</p>
+          </form>
+          <div class="fsucc" id="fsucc"><div class="si">&#128293;</div><h3>Inquiry Received!</h3><p>The fire has been lit. We&#8217;ll be in touch within 24 hours to start crafting your perfect event.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const nav=document.getElementById('mn');
+    window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
+    function oMM(){document.getElementById('mm').classList.add('open');document.body.style.overflow='hidden'}
+    function cMM(){document.getElementById('mm').classList.remove('open');document.body.style.overflow=''}
+    const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+    function oLB(el){const i=el.querySelector('img');document.getElementById('lbi').src=i.src;document.getElementById('lbi').alt=i.alt;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden'}
+    function cLB(){document.getElementById('lb').classList.remove('open');document.body.style.overflow=''}
+    document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)cLB()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'){cLB();cMM()}});
+    function lV(){document.getElementById('vf').src='https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&rel=0';document.getElementById('vf').style.display='block';document.getElementById('vph').style.display='none'}
+    function hSub(e){e.preventDefault();document.getElementById('cForm').style.display='none';document.getElementById('fsucc').style.display='block'}
+    (function(){
+      const c=document.getElementById('pc'),x=c.getContext('2d');let W,H,P=[];
+      function r(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+      window.addEventListener('resize',r);r();
+      class E{constructor(){this.reset()}reset(){this.x=Math.random()*W;this.y=H+10;this.vx=(Math.random()-.5)*.7;this.vy=-(Math.random()*1.6+.7);this.r=Math.random()*2.2+.5;this.l=0;this.m=Math.random()*200+100;this.h=Math.random()*30+8}update(){this.x+=this.vx+Math.sin(this.l*.05)*.3;this.y+=this.vy;this.vy-=.003;this.l++;if(this.l>this.m||this.y<-10)this.reset()}draw(){const p=this.l/this.m,a=p<.2?p/.2:1-(p-.2)/.8;x.save();x.globalAlpha=a*.75;x.fillStyle=`hsl(${this.h},100%,${55+p*35}%)`;x.shadowColor=`hsl(${this.h},100%,65%)`;x.shadowBlur=th
