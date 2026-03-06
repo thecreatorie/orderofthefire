@@ -35,8 +35,8 @@
     .mc{position:absolute;top:1.5rem;right:2rem;font-size:2rem;color:var(--muted);cursor:pointer;background:none;border:none}
 
     #hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
-    .hbg{position:absolute;inset:0;z-index:1;background:url('https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg') center 25%/cover no-repeat}
-    .hbg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(7,7,7,.55) 0%,rgba(7,7,7,.25) 30%,rgba(7,7,7,.6) 70%,rgba(7,7,7,1) 100%)}
+    .hbg{position:absolute;inset:0;z-index:1;background:url('images/DSCF2496.jpg') center 30%/cover no-repeat}
+    .hbg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(7,7,7,.55) 0%,rgba(7,7,7,.2) 30%,rgba(7,7,7,.65) 70%,rgba(7,7,7,1) 100%)}
     .ff{position:absolute;inset:0;background:radial-gradient(ellipse 60% 35% at 50% 100%,rgba(255,80,0,.18) 0%,transparent 65%);animation:flicker 3s ease-in-out infinite alternate}
     @keyframes flicker{0%{opacity:.5;transform:scaleX(1)}50%{opacity:1;transform:scaleX(1.06)}100%{opacity:.7;transform:scaleX(.97)}}
     .hc{position:relative;z-index:3;padding:2rem;max-width:900px}
@@ -69,12 +69,11 @@
     .dvc{margin-left:auto;margin-right:auto}
     .fd{width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--ember),var(--flame),var(--spark),var(--gold),var(--spark),var(--flame),var(--ember),transparent)}
     .rv{opacity:1;transform:none}
-    .rv.vis{opacity:1;transform:translateY(0)}
 
     #brand{padding:6rem 0;background:linear-gradient(180deg,var(--black) 0%,var(--s1) 100%)}
     .bg{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
     .bt p{font-size:1.08rem;color:rgba(242,235,217,.75);margin-bottom:1.2rem;font-weight:300}
-    .bv{position:relative;height:460px;border-radius:4px;overflow:hidden;background:var(--s2)}
+    .bv{position:relative;height:460px;border-radius:4px;overflow:hidden}
     .bv img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:saturate(1.15) contrast(1.05)}
     .bvb{position:absolute;inset:12px;border:1px solid rgba(255,92,0,.3);border-radius:3px;pointer-events:none;z-index:1}
 
@@ -92,7 +91,7 @@
     .ps::-webkit-scrollbar{height:3px}
     .ps::-webkit-scrollbar-track{background:transparent}
     .ps::-webkit-scrollbar-thumb{background:var(--fire);border-radius:3px}
-    .pi{flex:0 0 auto;height:100%;scroll-snap-align:start;position:relative;overflow:hidden;border-radius:3px;cursor:pointer;background:var(--s2)}
+    .pi{flex:0 0 auto;height:100%;scroll-snap-align:start;position:relative;overflow:hidden;border-radius:3px;cursor:pointer}
     .pi.p{width:270px}.pi.l{width:420px}
     .pi img{height:100%;width:100%;object-fit:cover;transition:transform .5s,filter .4s;filter:brightness(.85) saturate(1.1)}
     .pi:hover img{transform:scale(1.05);filter:brightness(1) saturate(1.3)}
@@ -107,7 +106,7 @@
     .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden}
     .svc{background:var(--s2);overflow:hidden;position:relative;transition:background .3s}
     .svc:hover{background:var(--s3)}
-    .simg{width:100%;height:210px;object-fit:cover;filter:brightness(.82) saturate(1.1);transition:filter .4s,transform .5s;display:block;background:var(--s3)}
+    .simg{width:100%;height:210px;object-fit:cover;filter:brightness(.82) saturate(1.1);transition:filter .4s,transform .5s;display:block}
     .svc:hover .simg{filter:brightness(.95) saturate(1.3);transform:scale(1.03)}
     .sbdy{padding:1.6rem 1.8rem 2rem}
     .snm{font-family:'Cinzel',serif;font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);margin-bottom:.5rem}
@@ -121,7 +120,7 @@
     .gstrip::-webkit-scrollbar{height:4px}
     .gstrip::-webkit-scrollbar-track{background:var(--s1)}
     .gstrip::-webkit-scrollbar-thumb{background:var(--fire);border-radius:3px}
-    .gi{flex:0 0 auto;height:100%;scroll-snap-align:start;position:relative;overflow:hidden;border-radius:3px;cursor:pointer;background:var(--s2)}
+    .gi{flex:0 0 auto;height:100%;scroll-snap-align:start;position:relative;overflow:hidden;border-radius:3px;cursor:pointer}
     .gi.p{width:330px}.gi.l{width:500px}.gi.s{width:410px}
     .gi img{height:100%;width:100%;object-fit:cover;transition:transform .5s,filter .4s;filter:brightness(.82) saturate(1.05)}
     .gi:hover img{transform:scale(1.04);filter:brightness(.98) saturate(1.28)}
@@ -239,8 +238,8 @@
           <p>From intimate private celebrations to massive corporate productions, we transform any venue into an unforgettable realm of living art. Every performance is custom-crafted, every moment choreographed to leave your guests breathless.</p>
           <p>Based in Austin, Texas &mdash; performing across the nation.</p>
         </div>
-        <div class="bv rv" style="transition-delay:.2s">
-          <img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire performer" />
+        <div class="bv rv">
+          <img src="images/Revelry-Barr_346.jpg" alt="Lamp Lady performer at evening event" />
           <div class="bvb"></div>
         </div>
       </div>
@@ -265,10 +264,10 @@
         </div>
         <p class="fodesc">Choreographed poi, staff, and multi-flame performances by artists who have dedicated their lives to the craft. Captivating from 10 feet or 100 &mdash; indoors or out.</p>
         <div class="ps">
-          <div class="pi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire dancer" loading="lazy" /></div>
-          <div class="pi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire dancer" loading="lazy" /></div>
-          <div class="pi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire staff" loading="lazy" /></div>
-          <div class="pi l" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire ocean" loading="lazy" /></div>
+          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_388.jpg" alt="Fire dancer with staff" loading="lazy" /></div>
+          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_389.jpg" alt="Female fire dancer" loading="lazy" /></div>
+          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_385.jpg" alt="Fire staff performance" loading="lazy" /></div>
+          <div class="pi l" onclick="oLB(this)"><img src="images/1000009875.jpg" alt="Fire dancer at ocean sunset" loading="lazy" /></div>
         </div>
         <p class="sn">Scroll to see more</p>
       </div>
@@ -280,8 +279,8 @@
         </div>
         <p class="fodesc">Towering columns of living flame launched from the performer&#8217;s own breath. A primal, awe-inspiring act performed exclusively outdoors &mdash; the moment that defines the night.</p>
         <div class="ps">
-          <div class="pi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire breathing ocean" loading="lazy" /></div>
-          <div class="pi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire breathing sunset" loading="lazy" /></div>
+          <div class="pi p" onclick="oLB(this)"><img src="images/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1.jpg" alt="Fire breathing at ocean" loading="lazy" /></div>
+          <div class="pi p" onclick="oLB(this)"><img src="images/DSCF2496.jpg" alt="Fire breathing at sunset" loading="lazy" /></div>
         </div>
         <p class="sn">Scroll to see more</p>
       </div>
@@ -291,10 +290,10 @@
           <h3 class="fotitle"><em>Fire Eating</em></h3>
           <span class="ftag">Close-Up &middot; Strolling &middot; Intimate</span>
         </div>
-        <p class="fodesc">An intimate and utterly captivating act. The performer brings flame to their lips and extinguishes it within &mdash; leaving audiences in stunned, mesmerized silence.</p>
+        <p class="fodesc">An intimate and utterly captivating act. The performer brings flame to their lips and extinguishes it within &mdash; leaving audiences in stunned, mesmerized silence. Perfect for cocktail hours.</p>
         <div class="ps">
-          <div class="pi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire eating" loading="lazy" /></div>
-          <div class="pi l" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Smoke effects" loading="lazy" /></div>
+          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_378.jpg" alt="Fire eating performer" loading="lazy" /></div>
+          <div class="pi l" onclick="oLB(this)"><img src="images/1000005830.jpg" alt="Smoke performance special effects" loading="lazy" /></div>
         </div>
         <p class="sn">Scroll to see more</p>
       </div>
@@ -311,34 +310,34 @@
         <div class="dv dvc"></div>
         <p>A full suite of immersive entertainment arts &mdash; from towering stilt walkers to luminous lamp ladies. We build your complete experience.</p>
       </div>
-      <div class="sgrid rv" style="transition-delay:.1s">
+      <div class="sgrid rv">
         <div class="svc">
-          <img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Stilt walker" class="simg" />
+          <img src="images/e9caf784-3680-44bc-b897-8f906d5496f4-1_all_5613.jpg" alt="Stilt walker skeleton" class="simg" />
           <div class="sbdy"><div class="snm">&#127918; Stilt Walkers</div><p class="sdc">Towering, costumed stilt performers that roam your event as living centerpieces &mdash; extraordinary for cocktail hours, arrivals, themed events, and Halloween events.</p></div>
           <div class="sgl"></div>
         </div>
         <div class="svc">
-          <img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Snake performer" class="simg" />
+          <img src="images/1000014271.jpg" alt="Snake performer" class="simg" />
           <div class="sbdy"><div class="snm">&#128013; Snake Performers</div><p class="sdc">Exotic snake charming performances that add an element of primal wonder and mystique. Unforgettable, conversation-starting, and wildly photogenic.</p></div>
           <div class="sgl"></div>
         </div>
         <div class="svc">
-          <img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Lamp Ladies" class="simg" />
+          <img src="images/Revelry-Barr_590.jpg" alt="Lamp Ladies" class="simg" />
           <div class="sbdy"><div class="snm">&#129812; Lamp Ladies</div><p class="sdc">Our signature Burlesque-inspired Lamp Ladies &mdash; elegant, atmospheric performers who bring old-world glamour and surreal wonder to cocktail hours and upscale events.</p></div>
           <div class="sgl"></div>
         </div>
         <div class="svc">
-          <img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Aerial" class="simg" />
+          <img src="images/e9caf784-3680-44bc-b897-8f906d5496f4-1_all_5524.jpg" alt="Stilt walker at holiday event" class="simg" />
           <div class="sbdy"><div class="snm">&#129442; Aerial Performances</div><p class="sdc">Breathtaking aerial silks, lyra, and acrobatic rigging acts. We also offer professional rig rentals and full rigging services for your production.</p></div>
           <div class="sgl"></div>
         </div>
         <div class="svc">
-          <img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="LED" class="simg" />
+          <img src="images/1000006142_copy.jpg" alt="Stilt walker holiday festival" class="simg" />
           <div class="sbdy"><div class="snm">&#128161; LED Light Shows</div><p class="sdc">High-energy LED performance art with illuminated props, body suits, and synchronized sequences &mdash; the perfect solution for indoor venues where fire isn&#8217;t permitted.</p></div>
           <div class="sgl"></div>
         </div>
         <div class="svc">
-          <img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="GoGo" class="simg" />
+          <img src="images/1000005838.jpg" alt="Devil stilt walker" class="simg" />
           <div class="sbdy"><div class="snm">&#10024; GoGo &amp; Custom Acts</div><p class="sdc">High-energy GoGo dancers plus bespoke acts tailored to your event concept, brand, or theme. Custom costuming, choreography, and concepts available.</p></div>
           <div class="sgl"></div>
         </div>
@@ -358,21 +357,21 @@
     </div>
     <div style="padding:0 2rem" class="rv">
       <div class="gstrip">
-        <div class="gi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire Breathing" loading="lazy" /><span class="gc">Fire Breathing</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire Dancing" loading="lazy" /><span class="gc">Fire Dancing</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire Breathing" loading="lazy" /><span class="gc">Fire Breathing</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Lamp Lady" loading="lazy" /><span class="gc">Lamp Lady</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire Performer" loading="lazy" /><span class="gc">Fire Dancing</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Snake Performance" loading="lazy" /><span class="gc">Snake Performance</span></div>
-        <div class="gi l" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire Staff" loading="lazy" /><span class="gc">Fire Staff</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Stilt Walker" loading="lazy" /><span class="gc">Stilt Walker</span></div>
-        <div class="gi s" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Lamp Ladies" loading="lazy" /><span class="gc">Lamp Ladies</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire Staff" loading="lazy" /><span class="gc">Fire Staff</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Stilt Walker" loading="lazy" /><span class="gc">Stilt Walker</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Fire Eating" loading="lazy" /><span class="gc">Fire Eating</span></div>
-        <div class="gi s" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Special Effects" loading="lazy" /><span class="gc">Special Effects</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Stilt Walker" loading="lazy" /><span class="gc">Stilt Walker</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="https://res.cloudinary.com/dbr9qssgs/image/upload/f_auto,q_auto/v1772739168/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1_bjbwet.jpg" alt="Stilt Walker" loading="lazy" /><span class="gc">Stilt Walker</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1.jpg" alt="Fire breathing ocean" loading="lazy" /><span class="gc">Fire Breathing</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_388.jpg" alt="Fire dancer" loading="lazy" /><span class="gc">Fire Dancing</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/DSCF2496.jpg" alt="Fire breathing sunset" loading="lazy" /><span class="gc">Fire Breathing</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_346.jpg" alt="Lamp Lady golden" loading="lazy" /><span class="gc">Lamp Lady</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_389.jpg" alt="Fire performer" loading="lazy" /><span class="gc">Fire Dancing</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/1000014271.jpg" alt="Snake performer" loading="lazy" /><span class="gc">Snake Performance</span></div>
+        <div class="gi l" onclick="oLB(this)"><img src="images/1000009875.jpg" alt="Fire staff ocean sunset" loading="lazy" /><span class="gc">Fire Staff</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/e9caf784-3680-44bc-b897-8f906d5496f4-1_all_5613.jpg" alt="Skeleton stilt walker" loading="lazy" /><span class="gc">Stilt Walker</span></div>
+        <div class="gi s" onclick="oLB(this)"><img src="images/Revelry-Barr_590.jpg" alt="Lamp Ladies party" loading="lazy" /><span class="gc">Lamp Ladies</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_385.jpg" alt="Fire staff performer" loading="lazy" /><span class="gc">Fire Staff</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/e9caf784-3680-44bc-b897-8f906d5496f4-1_all_5524.jpg" alt="Stilt walker holiday lights" loading="lazy" /><span class="gc">Stilt Walker</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_378.jpg" alt="Fire eating" loading="lazy" /><span class="gc">Fire Eating</span></div>
+        <div class="gi s" onclick="oLB(this)"><img src="images/1000005830.jpg" alt="Smoke performance" loading="lazy" /><span class="gc">Special Effects</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/1000005838.jpg" alt="Devil stilt walker" loading="lazy" /><span class="gc">Stilt Walker</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/1000006142_copy.jpg" alt="Holiday stilt walker" loading="lazy" /><span class="gc">Stilt Walker</span></div>
       </div>
       <p class="sn" style="margin-top:.8rem">Scroll to explore the full gallery</p>
     </div>
@@ -391,9 +390,9 @@
         <p class="slbl">&#10022; In Action</p>
         <h2 class="stitle">Watch <em>The Fire</em></h2>
         <div class="dv dvc"></div>
-        <p>Experience the spectacle before you book.</p>
+        <p>Experience the spectacle before you book. Replace the placeholder below with your YouTube or Vimeo showreel link.</p>
       </div>
-      <div class="vwrap rv" style="transition-delay:.2s">
+      <div class="vwrap rv">
         <div class="vph" id="vph">
           <div class="pli" onclick="lV()">&#9654;</div>
           <p>Your Showreel &mdash; Click to Play</p>
@@ -414,12 +413,12 @@
           <div class="dv"></div>
           <p>Every extraordinary event begins with a conversation. Tell us about your vision and we&#8217;ll craft a performance experience that exceeds your expectations.</p>
           <div class="cd"><div class="cic">&#128205;</div><div class="ctx"><strong>Location</strong><span>Austin, Texas &mdash; Available Nationwide</span></div></div>
-          <div class="cd"><div class="cic">&#128231;</div><div class="ctx"><strong>Email</strong><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fd9598919192bd928f99988f929b8995989b948f98d39e9290">[email&#160;protected]</a></span></div></div>
+          <div class="cd"><div class="cic">&#128231;</div><div class="ctx"><strong>Email</strong><span>hello@orderofthefire.com</span></div></div>
           <div class="cd"><div class="cic">&#128241;</div><div class="ctx"><strong>Phone / Text</strong><span>(512) 000-0000</span></div></div>
           <div class="cd"><div class="cic">&#8987;</div><div class="ctx"><strong>Response Time</strong><span>We respond within 24 hours</span></div></div>
           <div class="cd"><div class="cic">&#127918;</div><div class="ctx"><strong>Ideal Events</strong><span>Corporate events &middot; Weddings &middot; Festivals &middot; Product launches &middot; Private parties &middot; Nightlife</span></div></div>
         </div>
-        <div class="cf rv" style="transition-delay:.2s">
+        <div class="cf rv">
           <p class="ftl">&#10022; Inquiry Form</p>
           <form id="cForm" onsubmit="hSub(event)">
             <div class="fr">
@@ -433,7 +432,7 @@
               <div class="fg"><label>Event Date</label><input type="date" name="eventDate" /></div>
             </div>
             <div class="fg"><label>Services of Interest</label><select name="services"><option value="" disabled selected>Select performance</option><option>Fire Dancing</option><option>Fire Breathing</option><option>Fire Eating</option><option>Full Fire Show</option><option>Aerial Performance + Rig</option><option>Stilt Walkers</option><option>Snake Performers</option><option>LED Light Show</option><option>Lamp Ladies</option><option>GoGo Dancers</option><option>Multiple / Custom Package</option></select></div>
-            <div class="fg"><label>Tell Us About Your Event</label><textarea name="message" placeholder="Venue, guest count, vision, budget range..."></textarea></div>
+            <div class="fg"><label>Tell Us About Your Event</label><textarea name="message" placeholder="Venue, guest count, vision, budget range... the more detail, the better we can serve you."></textarea></div>
             <button type="submit" class="fsub">&#10022; Send Your Inquiry &#10022;</button>
             <p class="fn2">We respond to all inquiries within 24 hours.</p>
           </form>
@@ -443,13 +442,11 @@
     </div>
   </section>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     const nav=document.getElementById('mn');
     window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
     function oMM(){document.getElementById('mm').classList.add('open');document.body.style.overflow='hidden'}
     function cMM(){document.getElementById('mm').classList.remove('open');document.body.style.overflow=''}
-    const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
-    document.querySelectorAll(".rv").forEach(el=>{obs.observe(el);setTimeout(()=>el.classList.add("vis"),100)});
     function oLB(el){const i=el.querySelector('img');document.getElementById('lbi').src=i.src;document.getElementById('lbi').alt=i.alt;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden'}
     function cLB(){document.getElementById('lb').classList.remove('open');document.body.style.overflow=''}
     document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)cLB()});
@@ -461,4 +458,10 @@
       function r(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
       window.addEventListener('resize',r);r();
       class E{constructor(){this.reset()}reset(){this.x=Math.random()*W;this.y=H+10;this.vx=(Math.random()-.5)*.7;this.vy=-(Math.random()*1.6+.7);this.r=Math.random()*2.2+.5;this.l=0;this.m=Math.random()*200+100;this.h=Math.random()*30+8}update(){this.x+=this.vx+Math.sin(this.l*.05)*.3;this.y+=this.vy;this.vy-=.003;this.l++;if(this.l>this.m||this.y<-10)this.reset()}draw(){const p=this.l/this.m,a=p<.2?p/.2:1-(p-.2)/.8;x.save();x.globalAlpha=a*.75;x.fillStyle=`hsl(${this.h},100%,${55+p*35}%)`;x.shadowColor=`hsl(${this.h},100%,65%)`;x.shadowBlur=this.r*5;x.beginPath();x.arc(this.x,this.y,this.r*(1-p*.4),0,Math.PI*2);x.fill();x.restore()}}
-      for(let i=0;i<90;i+
+      for(let i=0;i<90;i++){const e=new E();e.l=Math.random()*e.m;e.y=Math.random()*H;P.push(e)}
+      function frame(){x.clearRect(0,0,W,H);P.forEach(p=>{p.update();p.draw()});requestAnimationFrame(frame)}
+      frame();
+    })();
+  </script>
+</body>
+</html>
