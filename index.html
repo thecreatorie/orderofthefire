@@ -106,7 +106,7 @@
     .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden}
     .svc{background:var(--s2);overflow:hidden;position:relative;transition:background .3s}
     .svc:hover{background:var(--s3)}
-    .simg{width:100%;height:210px;object-fit:cover;filter:brightness(.82) saturate(1.1);transition:filter .4s,transform .5s;display:block}
+    .simg{width:100%;aspect-ratio:9/16;object-fit:cover;object-position:center top;filter:brightness(.82) saturate(1.1);transition:filter .4s,transform .5s;display:block}
     .svc:hover .simg{filter:brightness(.95) saturate(1.3);transform:scale(1.03)}
     .sbdy{padding:1.6rem 1.8rem 2rem}
     .snm{font-family:'Cinzel',serif;font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);margin-bottom:.5rem}
@@ -327,17 +327,17 @@
           <div class="sgl"></div>
         </div>
         <div class="svc">
-          <img src="images/e9caf784-3680-44bc-b897-8f906d5496f4-1_all_5524.jpg" alt="Stilt walker at holiday event" class="simg" />
+          <img src="images/1000009875.jpg" alt="Aerial performance" class="simg" />
           <div class="sbdy"><div class="snm">&#129442; Aerial Performances</div><p class="sdc">Breathtaking aerial silks, lyra, and acrobatic rigging acts. We also offer professional rig rentals and full rigging services for your production.</p></div>
           <div class="sgl"></div>
         </div>
         <div class="svc">
-          <img src="images/1000006142_copy.jpg" alt="Stilt walker holiday festival" class="simg" />
+          <img src="images/1000005830.jpg" alt="LED and smoke special effects" class="simg" />
           <div class="sbdy"><div class="snm">&#128161; LED Light Shows</div><p class="sdc">High-energy LED performance art with illuminated props, body suits, and synchronized sequences &mdash; the perfect solution for indoor venues where fire isn&#8217;t permitted.</p></div>
           <div class="sgl"></div>
         </div>
         <div class="svc">
-          <img src="images/1000005838.jpg" alt="Devil stilt walker" class="simg" />
+          <img src="images/1000006142_copy.jpg" alt="Costumed performer" class="simg" />
           <div class="sbdy"><div class="snm">&#10024; GoGo &amp; Custom Acts</div><p class="sdc">High-energy GoGo dancers plus bespoke acts tailored to your event concept, brand, or theme. Custom costuming, choreography, and concepts available.</p></div>
           <div class="sgl"></div>
         </div>
@@ -413,20 +413,22 @@
           <div class="dv"></div>
           <p>Every extraordinary event begins with a conversation. Tell us about your vision and we&#8217;ll craft a performance experience that exceeds your expectations.</p>
           <div class="cd"><div class="cic">&#128205;</div><div class="ctx"><strong>Location</strong><span>Austin, Texas &mdash; Available Nationwide</span></div></div>
-          <div class="cd"><div class="cic">&#128231;</div><div class="ctx"><strong>Email</strong><span>hello@orderofthefire.com</span></div></div>
-          <div class="cd"><div class="cic">&#128241;</div><div class="ctx"><strong>Phone / Text</strong><span>(512) 000-0000</span></div></div>
+          <div class="cd"><div class="cic">&#128231;</div><div class="ctx"><strong>Email</strong><span><a href="mailto:entertainment@orderofthefire.com" style="color:var(--cream);text-decoration:none">entertainment@orderofthefire.com</a></span></div></div>
+          <div class="cd"><div class="cic">&#128241;</div><div class="ctx"><strong>Phone / Text</strong><span>+1 (323) 632-6365</span></div></div>
           <div class="cd"><div class="cic">&#8987;</div><div class="ctx"><strong>Response Time</strong><span>We respond within 24 hours</span></div></div>
           <div class="cd"><div class="cic">&#127918;</div><div class="ctx"><strong>Ideal Events</strong><span>Corporate events &middot; Weddings &middot; Festivals &middot; Product launches &middot; Private parties &middot; Nightlife</span></div></div>
         </div>
         <div class="cf rv">
           <p class="ftl">&#10022; Inquiry Form</p>
-          <form id="cForm" onsubmit="hSub(event)">
+          <form id="cForm" action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" method="POST" onsubmit="hSub(event)">
             <div class="fr">
-              <div class="fg"><label>First Name</label><input type="text" name="firstName" placeholder="Jane" required /></div>
+              <input type="hidden" name="_replyto" value="entertainment@orderofthefire.com" />
+            <input type="hidden" name="_subject" value="New Booking Inquiry - Order of the Fire" />
+            <div class="fg"><label>First Name</label><input type="text" name="firstName" placeholder="Jane" required /></div>
               <div class="fg"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" required /></div>
             </div>
             <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="jane@company.com" required /></div>
-            <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="(512) 000-0000" /></div>
+            <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="+1 (323) 632-6365" /></div>
             <div class="fr">
               <div class="fg"><label>Event Type</label><select name="eventType" required><option value="" disabled selected>Select type</option><option>Corporate Event</option><option>Wedding</option><option>Private Celebration</option><option>Festival / Concert</option><option>Product Launch</option><option>Nightlife / Club</option><option>Other</option></select></div>
               <div class="fg"><label>Event Date</label><input type="date" name="eventDate" /></div>
@@ -452,16 +454,23 @@
     document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)cLB()});
     document.addEventListener('keydown',e=>{if(e.key==='Escape'){cLB();cMM()}});
     function lV(){document.getElementById('vf').src='https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&rel=0';document.getElementById('vf').style.display='block';document.getElementById('vph').style.display='none'}
-    function hSub(e){e.preventDefault();document.getElementById('cForm').style.display='none';document.getElementById('fsucc').style.display='block'}
+    function hSub(e){
+      const form=document.getElementById('cForm');
+      const action=form.action;
+      if(action.includes('REPLACE_WITH_YOUR_ID')){
+        e.preventDefault();
+        document.getElementById('cForm').style.display='none';
+        document.getElementById('fsucc').style.display='block';
+        return;
+      }
+      e.preventDefault();
+      fetch(action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+        .then(r=>{if(r.ok){document.getElementById('cForm').style.display='none';document.getElementById('fsucc').style.display='block';}else{alert('There was an error. Please email us directly at entertainment@orderofthefire.com');}})
+        .catch(()=>alert('There was an error. Please email us directly at entertainment@orderofthefire.com'));
+    }
     (function(){
       const c=document.getElementById('pc'),x=c.getContext('2d');let W,H,P=[];
       function r(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
       window.addEventListener('resize',r);r();
       class E{constructor(){this.reset()}reset(){this.x=Math.random()*W;this.y=H+10;this.vx=(Math.random()-.5)*.7;this.vy=-(Math.random()*1.6+.7);this.r=Math.random()*2.2+.5;this.l=0;this.m=Math.random()*200+100;this.h=Math.random()*30+8}update(){this.x+=this.vx+Math.sin(this.l*.05)*.3;this.y+=this.vy;this.vy-=.003;this.l++;if(this.l>this.m||this.y<-10)this.reset()}draw(){const p=this.l/this.m,a=p<.2?p/.2:1-(p-.2)/.8;x.save();x.globalAlpha=a*.75;x.fillStyle=`hsl(${this.h},100%,${55+p*35}%)`;x.shadowColor=`hsl(${this.h},100%,65%)`;x.shadowBlur=this.r*5;x.beginPath();x.arc(this.x,this.y,this.r*(1-p*.4),0,Math.PI*2);x.fill();x.restore()}}
-      for(let i=0;i<90;i++){const e=new E();e.l=Math.random()*e.m;e.y=Math.random()*H;P.push(e)}
-      function frame(){x.clearRect(0,0,W,H);P.forEach(p=>{p.update();p.draw()});requestAnimationFrame(frame)}
-      frame();
-    })();
-  </script>
-</body>
-</html>
+      for(let i=0;i<90;i+
