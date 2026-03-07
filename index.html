@@ -105,6 +105,9 @@
     .svch p{font-size:1.05rem;color:rgba(242,235,217,.65);font-style:italic}
     .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden}
     .svc{background:var(--s2);overflow:hidden;position:relative;transition:background .3s}
+    .svc-credit{position:absolute;bottom:.6rem;right:.7rem;font-size:.5rem;letter-spacing:.12em;color:var(--cream);opacity:0;transition:opacity .3s;z-index:2;text-transform:uppercase}
+    .svc-credit a{color:var(--cream);text-decoration:none}.svc-credit a:hover{text-decoration:underline}
+    .svc:hover .svc-credit{opacity:.8}
     .svc:hover{background:var(--s3)}
     .simg{width:100%;aspect-ratio:9/16;object-fit:cover;object-position:center top;filter:brightness(.82) saturate(1.1);transition:filter .4s,transform .5s;display:block}
     .svc:hover .simg{filter:brightness(.95) saturate(1.3);transform:scale(1.03)}
@@ -128,6 +131,9 @@
     .gi:hover::after{opacity:1}
     .gc{position:absolute;bottom:0;left:0;right:0;padding:1rem 1.2rem .9rem;font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);z-index:1;transform:translateY(8px);opacity:0;transition:all .3s}
     .gi:hover .gc{transform:translateY(0);opacity:1}
+    .pi:hover .gc{transform:translateY(0);opacity:1}
+    .gc a{color:var(--cream);text-decoration:none;opacity:.85}.gc a:hover{opacity:1;text-decoration:underline}
+    .gc-credit{display:block;font-size:.5rem;letter-spacing:.15em;margin-top:.3rem;opacity:.75}
 
     .lb{display:none;position:fixed;inset:0;background:rgba(7,7,7,.96);z-index:2000;align-items:center;justify-content:center}
     .lb.open{display:flex}
@@ -268,9 +274,9 @@
         </div>
         <p class="fodesc">Choreographed poi, staff, and multi-flame performances by artists who have dedicated their lives to the craft. Captivating from 10 feet or 100 &mdash; indoors or out.</p>
         <div class="ps">
-          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_388.jpg" alt="Fire dancer with staff" loading="lazy" /></div>
-          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_389.jpg" alt="Female fire dancer" loading="lazy" /></div>
-          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_385.jpg" alt="Fire staff performance" loading="lazy" /></div>
+          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_388.jpg" alt="Fire dancer with staff" loading="lazy" /><span class="gc"><a href="https://www.instagram.com/wetthdrakes" target="_blank" rel="noopener" class="gc-credit">📷 @wetthdrakes</a></span></div>
+          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_389.jpg" alt="Female fire dancer" loading="lazy" /><span class="gc"><a href="https://www.instagram.com/wetthdrakes" target="_blank" rel="noopener" class="gc-credit">📷 @wetthdrakes</a></span></div>
+          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_385.jpg" alt="Fire staff performance" loading="lazy" /><span class="gc"><a href="https://www.instagram.com/wetthdrakes" target="_blank" rel="noopener" class="gc-credit">📷 @wetthdrakes</a></span></div>
        <div class="pi p" onclick="oLB(this)"><img src="images/palmtorches.jpeg" alt="Fire staff performance" loading="lazy" /></div>
        
         </div>
@@ -299,7 +305,7 @@
         </div>
         <p class="fodesc">An intimate and utterly captivating act. The performer brings flame to their lips and extinguishes it within &mdash; leaving audiences in stunned, mesmerized silence. Perfect for cocktail hours.</p>
         <div class="ps">
-          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_378.jpg" alt="Fire eating performer" loading="lazy" /></div>
+          <div class="pi p" onclick="oLB(this)"><img src="images/Revelry-Barr_378.jpg" alt="Fire eating performer" loading="lazy" /><span class="gc"><a href="https://www.instagram.com/wetthdrakes" target="_blank" rel="noopener" class="gc-credit">📷 @wetthdrakes</a></span></div>
           <div class="pi l" onclick="oLB(this)"><img src="images/torches2.jpeg" alt="Smoke performance special effects" loading="lazy" /></div>
         </div>
         <p class="sn">Scroll to see more</p>
@@ -329,7 +335,7 @@
           <div class="sgl"></div>
         </div>
         <div class="svc">
-          <img src="images/Revelry-Barr_346.jpg" alt="Lamp Ladies" class="simg" />
+          <img src="images/Revelry-Barr_346.jpg" alt="Lamp Ladies" class="simg" /><span class="svc-credit"><a href="https://www.instagram.com/wetthdrakes" target="_blank" rel="noopener">📷 @wetthdrakes</a></span>
           <div class="sbdy"><div class="snm">Lamp Ladies</div><p class="sdc">Our signature Burlesque-inspired Lamp Ladies &mdash; elegant, atmospheric performers who bring old-world glamour and surreal wonder to cocktail hours and upscale events.</p></div>
           <div class="sgl"></div>
         </div>
@@ -381,19 +387,19 @@
     <div style="padding:0 2rem" class="rv">
       <div class="gstrip">
         <div class="gi p" onclick="oLB(this)"><img src="images/b81f68ac-48c8-4d84-bb3c-aaf16ae93a51_1.jpg" alt="Fire breathing ocean" loading="lazy" /><span class="gc">Fire Breathing</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_388.jpg" alt="Fire dancer" loading="lazy" /><span class="gc">Fire Dancing</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_388.jpg" alt="Fire dancer" loading="lazy" /><span class="gc">Fire Dancing<a href="https://www.instagram.com/wetthdrakes" target="_blank" rel="noopener" class="gc-credit">📷 @wetthdrakes</a></span></div>
         <div class="gi p" onclick="oLB(this)"><img src="images/DSCF2496.jpg" alt="Fire breathing sunset" loading="lazy" /><span class="gc">Fire Breathing</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_346.jpg" alt="Lamp Lady golden" loading="lazy" /><span class="gc">Lamp Lady</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_389.jpg" alt="Fire performer" loading="lazy" /><span class="gc">Fire Dancing</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_346.jpg" alt="Lamp Lady golden" loading="lazy" /><span class="gc">Lamp Lady<a href="https://www.instagram.com/wetthdrakes" target="_blank" rel="noopener" class="gc-credit">📷 @wetthdrakes</a></span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_389.jpg" alt="Fire performer" loading="lazy" /><span class="gc">Fire Dancing<a href="https://www.instagram.com/wetthdrakes" target="_blank" rel="noopener" class="gc-credit">📷 @wetthdrakes</a></span></div>
         <div class="gi p" onclick="oLB(this)"><img src="images/IMG_1494.JPG" alt="Snake performer" loading="lazy" /><span class="gc">Snake Performer</span></div>
         <div class="gi p" onclick="oLB(this)"><img src="images/1000014271.jpg" alt="Snake performer" loading="lazy" /><span class="gc">Snake Performance</span></div>
         <div class="gi l" onclick="oLB(this)"><img src="images/1000009875.jpg" alt="Fire staff ocean sunset" loading="lazy" /><span class="gc">Fire Staff</span></div>
         <div class="gi p" onclick="oLB(this)"><img src="images/e9caf784-3680-44bc-b897-8f906d5496f4-1_all_5613.jpg" alt="Skeleton stilt walker" loading="lazy" /><span class="gc">Stilt Walker</span></div>
         <div class="gi p" onclick="oLB(this)"><img src="images/DSC_3238.jpeg" alt="Skeleton stilt walker" loading="lazy" /><span class="gc">Aerialist with Fire</span></div>
-        <div class="gi s" onclick="oLB(this)"><img src="images/Revelry-Barr_590.jpg" alt="Lamp Ladies party" loading="lazy" /><span class="gc">Lamp Ladies</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_385.jpg" alt="Fire staff performer" loading="lazy" /><span class="gc">Fire Staff</span></div>
+        <div class="gi s" onclick="oLB(this)"><img src="images/Revelry-Barr_590.jpg" alt="Lamp Ladies party" loading="lazy" /><span class="gc">Lamp Ladies<a href="https://www.instagram.com/wetthdrakes" target="_blank" rel="noopener" class="gc-credit">📷 @wetthdrakes</a></span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_385.jpg" alt="Fire staff performer" loading="lazy" /><span class="gc">Fire Staff<a href="https://www.instagram.com/wetthdrakes" target="_blank" rel="noopener" class="gc-credit">📷 @wetthdrakes</a></span></div>
         <div class="gi p" onclick="oLB(this)"><img src="images/e9caf784-3680-44bc-b897-8f906d5496f4-1_all_5524.jpg" alt="Stilt walker holiday lights" loading="lazy" /><span class="gc">Stilt Walker</span></div>
-        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_378.jpg" alt="Fire eating" loading="lazy" /><span class="gc">Fire Eating</span></div>
+        <div class="gi p" onclick="oLB(this)"><img src="images/Revelry-Barr_378.jpg" alt="Fire eating" loading="lazy" /><span class="gc">Fire Eating<a href="https://www.instagram.com/wetthdrakes" target="_blank" rel="noopener" class="gc-credit">📷 @wetthdrakes</a></span></div>
         <div class="gi s" onclick="oLB(this)"><img src="images/1000005830.jpg" alt="Smoke performance" loading="lazy" /><span class="gc">Special Effects</span></div>
         <div class="gi p" onclick="oLB(this)"><img src="images/1000005838.jpg" alt="Devil stilt walker" loading="lazy" /><span class="gc">Stilt Walker</span></div>
         <div class="gi p" onclick="oLB(this)"><img src="images/1000006142_copy.jpg" alt="Holiday stilt walker" loading="lazy" /><span class="gc">Stilt Walker</span></div>
@@ -443,7 +449,7 @@
           <div class="dv"></div>
           <p>Every extraordinary event begins with a conversation. Tell us about your vision and we&#8217;ll craft a performance experience that exceeds your expectations.</p>
           <div class="cd"><div class="cic">&#128205;</div><div class="ctx"><strong>Location</strong><span>Austin, Texas &mdash; Available Nationwide</span></div></div>
-          <div class="cd"><div class="cic">&#128231;</div><div class="ctx"><strong>Email</strong><span><a href="/cdn-cgi/l/email-protection#33565d47564147525a5d5e565d47735c415756415c55475b56555a41561d505c5e" style="color:var(--cream);text-decoration:none"><span class="__cf_email__" data-cfemail="fc999288998e889d959291999288bc938e98998e939a8894999a958e99d29f9391">entertainment@orderofthefire.com</span></a></span></div></div>
+          <div class="cd"><div class="cic">&#128231;</div><div class="ctx"><strong>Email</strong><span><a href="/cdn-cgi/l/email-protection#33565d47564147525a5d5e565d47735c415756415c55475b56555a41561d505c5e" style="color:var(--cream);text-decoration:none"><span class="__cf_email__" data-cfemail="fc999288998e889d959291999288bc938e98998e939a8894999a958e99d29f9391"><span class="__cf_email__" data-cfemail="b1d4dfc5d4c3c5d0d8dfdcd4dfc5f1dec3d5d4c3ded7c5d9d4d7d8c3d49fd2dedc">[email&#160;protected]</span></span></a></span></div></div>
           <div class="cd"><div class="cic">&#128241;</div><div class="ctx"><strong>Phone / Text</strong><span>+1 (323) 632-6365</span></div></div>
           <div class="cd"><div class="cic">&#8987;</div><div class="ctx"><strong>Response Time</strong><span>We respond within 24 hours</span></div></div>
           <div class="cd"><div class="cic">&#127918;</div><div class="ctx"><strong>Ideal Events</strong><span>Corporate events &middot; Weddings &middot; Festivals &middot; Product launches &middot; Private parties &middot; Nightlife</span></div></div>
@@ -474,7 +480,7 @@
     </div>
   </section>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const nav=document.getElementById('mn');
     window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
     function oMM(){document.getElementById('mm').classList.add('open');document.body.style.overflow='hidden'}
@@ -502,4 +508,4 @@
       const c=document.getElementById('pc'),x=c.getContext('2d');let W,H,P=[];
       function r(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
       window.addEventListener('resize',r);r();
-      class E{constructor(){this.reset()}reset(){this.x=Math.random()*W;this.y=H+10;this.vx=(Math.random()-.5)*.7;this.vy=-(Math.random()*1.6+.7);this.r=Math.random()*2.2+.5;this.l=0;this.m=Math.random()*200+100;this.h=Math.random()*30+8}update(){this.x+=this.vx+Math.sin(this.l*.05)*.3;this.y+=this.vy;this.vy-=.003;this.l++;if(this.l>this.m||this.y<-10)this.reset()}draw(){const p=this.l/this.m,a=p
+      class E{constructor(){this.reset()}reset(){this.x=Math.random()*W;this.y=H+10;this.vx=(Math.random()-.5)*.7;this.vy=-(Math.random()*1.6+.7);this.r=Math.random()*2.2+.5;this.l=0;thi
